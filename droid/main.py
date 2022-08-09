@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import asyncio
 import logging
+from multiprocessing import Event
 import sys
 from time import sleep
 
@@ -14,11 +15,12 @@ from nio import (
     MegolmEvent,
     RoomMessageText,
     UnknownEvent,
+    RoomMemberEvent,
 )
 
-from my_project_name.callbacks import Callbacks
-from my_project_name.config import Config
-from my_project_name.storage import Storage
+from droid.callbacks import Callbacks
+from droid.config import Config
+from droid.storage import Storage
 
 logger = logging.getLogger(__name__)
 
@@ -68,6 +70,7 @@ async def main():
     )
     client.add_event_callback(callbacks.decryption_failure, (MegolmEvent,))
     client.add_event_callback(callbacks.unknown, (UnknownEvent,))
+    client.add_event_callback(callbacks.room_member_event, (RoomMemberEvent,))
 
     # Keep trying to reconnect on failure (with some time in-between)
     while True:

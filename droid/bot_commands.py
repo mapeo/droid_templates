@@ -1,8 +1,8 @@
 from nio import AsyncClient, MatrixRoom, RoomMessageText
 
-from my_project_name.chat_functions import react_to_event, send_text_to_room
-from my_project_name.config import Config
-from my_project_name.storage import Storage
+from droid.chat_functions import react_to_event, send_text_to_room
+from droid.config import Config
+from droid.storage import Storage
 
 
 class Command:

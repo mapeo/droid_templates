@@ -46,7 +46,7 @@ See [SETUP.md](SETUP.md) for how to setup and run the template project.
 *A reference of each file included in the template repository, its purpose and
 what it does.*
 
-The majority of the code is kept inside of the `my_project_name` folder, which
+The majority of the code is kept inside of the `droid` folder, which
 is in itself a [python package](https://docs.python.org/3/tutorial/modules.html),
 the `__init__.py` file inside declaring it as such.
 
@@ -65,7 +65,7 @@ their needs. Be sure never to check the edited `config.yaml` into source control
 since it'll likely contain sensitive details such as passwords!
 
 Below is a detailed description of each of the source code files contained within
-the `my_project_name` directory:
+the `droid` directory:
 
 ### `main.py`
 
